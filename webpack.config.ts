@@ -19,4 +19,5 @@ const config: webpack.Configuration = BuildWebpackConfig({
   isDev,
 });
 
+
 export default config;
