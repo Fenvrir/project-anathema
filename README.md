@@ -18,18 +18,28 @@ npm i -y = инифиализировать объект с дефолтными
     4. всё остальное из webpack.config переносим в buildwebpack.config
 
 3.  DevServer -
+
     1. Устанавливаем WebpackDevServer
     2. Создаём buildDevServers
-    3. Добавляем port  в config.ts
+    3. Добавляем port в config.ts
     4. Добавить BuilddevServer в основной конфиг
     5. Добавляем переменные окружения в scipts: {}
     6. Добавить типы для переменных окружения
-    7. Отключить соурсМапы  при продакшине.
+    7. Отключить соурсМапы при продакшине.
 
+4.  React + react dome + установить зависимости.
 
-4.  React + react dome  + установить зависимости.
-    1) npm install react react-dom + типы для них
-    2) Написать index.tsx компонент.
-    3) добавиьт react-tsx в tsconfig
-    4) Сделать component счётчик для примера 
-    4) Добавить лоадер для scss и css (style-loader и css-loader)
+    1. npm install react react-dom + типы для них
+    2. Написать index.tsx компонент.
+    3. добавиьт react-tsx в tsconfig
+    4. Сделать component счётчик для примера
+    5. Добавить лоадер для scss и css (style-loader и css-loader)
+
+5.  Css и scss
+    
+    1. Добавить плагин MiniCssExtractPLugin
+    2. Добавить лоадер MiniCssExtractPLugi.loader вместо style loadera
+    3. ДОбавить условия. Для разработки не создавать css файлы, то есть отключать MiniCssExtractPLugi.loader
+    4. Добавить правило css.modules в loader 
+    5. Добавить global.d.ts для module.ts
+    6. Создать app.tsx и файл с обнуляющими стилями
