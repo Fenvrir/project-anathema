@@ -36,10 +36,19 @@ npm i -y = инифиализировать объект с дефолтными
     5. Добавить лоадер для scss и css (style-loader и css-loader)
 
 5.  Css и scss
-    
+
     1. Добавить плагин MiniCssExtractPLugin
     2. Добавить лоадер MiniCssExtractPLugi.loader вместо style loadera
     3. ДОбавить условия. Для разработки не создавать css файлы, то есть отключать MiniCssExtractPLugi.loader
-    4. Добавить правило css.modules в loader 
+    4. Добавить правило css.modules в loader
     5. Добавить global.d.ts для module.ts
     6. Создать app.tsx и файл с обнуляющими стилями
+
+6.  React-router-dom + types
+
+    1. Добавить зависимости React-router-dom + types
+    2. Создать папку с pages. Внутри два тестовых комопнента aboutPage и mainPage
+    3. Подключаем их как роуты.
+    4. Добавить historyApi в devServer, чтобы всё коректно работало при обновлении.
+    5. Сделать lazyLoading/чанки для новых страничек. https://stackoverflow.com/questions/76340518/lazy-loading-routes-in-react-router-v6
+    6. Обернуть в suspense, если надо.
