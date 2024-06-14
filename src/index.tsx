@@ -1,7 +1,11 @@
 import { createRoot } from "react-dom/client";
 import App from "./App";
-import "./index.scss"
+import "./styles/index.scss";
+import ThemeProvider from "./theme/ThemeContextProvider";
 
-// Render your React component instead
 const root = createRoot(document.getElementById("root"));
-root.render(<App />);
+root.render(
+  <ThemeProvider>
+    <App />
+  </ThemeProvider>
+);

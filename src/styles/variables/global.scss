@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Kalam&family=Source+Code+Pro:wght@400;700&family=Source+Sans+3:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap");
+
+:root {
+	// Fonts
+	--ff-main: "Source Code Pro", monospace;
+	--ff-secondary: "Source Sans 3", sans-serif;
+	--ff-pretty: "Kalam", cursive;
+
+	--font-size-m: 16px;
+	--font-line-m: 24px;
+	--font-m: var(--font-size-m) / var(--font-line-m) var(--ff-main);
+
+	--font-size-l: 24px;
+	--font-line-l: 32px;
+	--font-l: var(--font-size-m) / var(--font-line-m) var(--ff-main);
+
+	// Базовые цвета
+	--brown-main: #2f1829;
+	--ragin-beige: #fff5d7;
+	--coral-pink: #ff5e6c;
+	--sleuthe-yellow: #feb300;
+	--pink-leaf: #ffaaab;
+
+	// Цвета для тёмной темы
+	--ice-cold: #a0d2eb;
+	--freeze-purple: #e5eaf5;
+	--medium-purple: #d0bdf4;
+	--purple-main: #8458b3;
+	--heavy-purple: #a28089;
+
+	// Размеры
+	--navbar-height: 50px;
+}
