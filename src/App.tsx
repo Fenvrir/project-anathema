@@ -2,6 +2,7 @@ import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RoutesLinks from "./Routes/RoutesLinks";
 import { useTheme } from "./theme/useTheme";
+import { classNames } from "./helpers/classNames";
 
 const router = createBrowserRouter([
   {
@@ -31,7 +32,7 @@ const App = () => {
 
   return (
     <React.StrictMode>
-      <div className={`app ${theme}`}>
+      <div className={classNames("app", {}, [theme])}>
         <button onClick={toggleTheme}>Toggle Theme</button>
         <RouterProvider router={router} />
       </div>
