@@ -1,26 +1,27 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import RoutesLinks from "./Routes/RoutesLinks";
-import { useTheme } from "./theme/useTheme";
-import { classNames } from "./helpers/classNames";
+import NavBarOld from "@/widgets/NavBarOld";
+import { NavBar } from "@/widgets/NavBar";
+import { useTheme } from "@/app/providers/ThemeProvider";
+import { classNames } from "@/shared/lib/className";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: RoutesLinks(),
+    element: <NavBar />,
     children: [
       {
         path: "/about-page",
         async lazy() {
-          const AboutPage = await import("./pages/about-page/AboutPage");
-          return { Component: AboutPage.default };
+          const component = await import("@/pages/AboutPage/index");
+          return { Component: component.AboutPage };
         },
       },
       {
         path: "/main-page",
         async lazy() {
-          const MainPage = await import("./pages/main-page/MainPage");
-          return { Component: MainPage.default };
+          const component = await import("@/pages/MainPage/index");
+          return { Component: component.MainPage };
         },
       },
     ],

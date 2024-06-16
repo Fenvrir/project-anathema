@@ -23,7 +23,6 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
         loader: "css-loader",
         options: {
           esModule: true,
-          // modules: true
           modules: {
             // Эта проверка даёт возможность использовать модульный подход в файлах,
             // которые включает в своё название ".module."

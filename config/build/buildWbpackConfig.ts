@@ -12,19 +12,21 @@ export const BuildWebpackConfig = (
   const { mode, paths, isDev } = options;
 
   return {
+    //Указываем путь до __dirname == рабочая директория и участков путей (src и index.js).
     mode,
     entry: paths.entry,
     output: {
       filename: "[name].[contenthash].js",
       path: paths.build,
+      // Очищаем build
       clean: true,
     },
-    devtool: isDev ? "inline-source-map": undefined,
-    module:  {
+    devtool: isDev ? "inline-source-map" : undefined,
+    module: {
       rules: buildLoaders(options),
-  },
-    resolve: buildResolvers(),
+    },
+    resolve: buildResolvers(paths),
     plugins: buildPlugins(paths),
-    devServer: isDev ? buildDevServer(options) : undefined
+    devServer: isDev ? buildDevServer(options) : undefined,
   };
 };

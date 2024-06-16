@@ -4,7 +4,7 @@ import {
   Theme,
   ThemeContext,
   ThemesType,
-} from "./ThemeContext";
+} from "../lib/ThemeContext";
 
 interface Props {
   children: React.ReactNode;

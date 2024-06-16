@@ -11,6 +11,10 @@
     "jsx": "react-jsx",
     // Компилятор будет обрабатывать не только TS файлы, но и JS файлы
     "allowJs": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["*"]
+    },
     "moduleResolution": "node",
     // esModuleInterop позволяет работать с пакетами, которые используют
     // common js как с обычными пакета с помощью import (require() module.export) = common js
@@ -33,6 +37,7 @@
       }
     ]
   },
+  // Эта опция нужна для вебпака.
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"

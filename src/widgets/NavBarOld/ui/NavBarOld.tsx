@@ -1,5 +1,5 @@
 import { Outlet, Link } from "react-router-dom";
-import * as classes from "./Routes.module.scss";
+import * as classes from "./NavBarOld.module.scss";
 
 const RoutesLinks = () => {
   return (
