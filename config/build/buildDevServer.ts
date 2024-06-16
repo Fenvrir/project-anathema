@@ -5,5 +5,8 @@ export const buildDevServer = ({ port }: BuildOptions): Configuration => {
   return {
     port: port,
     open: true,
+    // Нужно чтобы исправить ошибку Cannot GET,
+    // после подключения react-router-dom
+    historyApiFallback: true,
   };
 };

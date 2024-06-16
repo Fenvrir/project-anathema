@@ -1,0 +1,23 @@
+{
+	"crc": {
+		"scope": "javascriptreact, typescriptreact",
+		"prefix": "crc",
+		"body": [
+			"import styles from \"./${TM_FILENAME/[\\.tsx]+//}.module.scss\"",
+			"",
+			"interface ${TM_FILENAME/[\\.tsx]+//}Props {",
+			"    className: string",
+			"}",
+			"",
+			"export const ${TM_FILENAME/[\\.tsx]+//} = ({ className = \"\" }: ${TM_FILENAME/[\\.tsx]+//}Props) => {",
+			"  return (",
+			"    <div>",
+			"      $1",
+			"    </div>",
+			"  )",
+			"};",
+			""
+		],
+		"description": "Create Functional react-component"
+	}
+}

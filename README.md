@@ -18,11 +18,55 @@ npm i -y = инифиализировать объект с дефолтными
     4. всё остальное из webpack.config переносим в buildwebpack.config
 
 3.  DevServer -
+
     1. Устанавливаем WebpackDevServer
     2. Создаём buildDevServers
-    3. Добавляем port  в config.ts
+    3. Добавляем port в config.ts
     4. Добавить BuilddevServer в основной конфиг
     5. Добавляем переменные окружения в scipts: {}
     6. Добавить типы для переменных окружения
-    7. Отключить соурсМапы  при продакшине.
+    7. Отключить соурсМапы при продакшине.
 
+4.  React + react dome + установить зависимости.
+
+    1. npm install react react-dom + типы для них
+    2. Написать index.tsx компонент.
+    3. добавиьт react-tsx в tsconfig
+    4. Сделать component счётчик для примера
+    5. Добавить лоадер для scss и css (style-loader и css-loader)
+
+5.  Css и scss
+
+    1. Добавить плагин MiniCssExtractPLugin
+    2. Добавить лоадер MiniCssExtractPLugi.loader вместо style loadera
+    3. ДОбавить условия. Для разработки не создавать css файлы, то есть отключать MiniCssExtractPLugi.loader
+    4. Добавить правило css.modules в loader
+    5. Добавить global.d.ts для module.ts
+    6. Создать app.tsx и файл с обнуляющими стилями
+
+6.  React-router-dom + types
+
+    1. Добавить зависимости React-router-dom + types
+    2. Создать папку с pages. Внутри два тестовых комопнента aboutPage и mainPage
+    3. Подключаем их как роуты.
+    4. Добавить historyApi в devServer, чтобы всё коректно работало при обновлении.
+    5. Сделать lazyLoading/чанки для новых страничек. https://stackoverflow.com/questions/76340518/lazy-loading-routes-in-react-router-v6
+    6. Обернуть в suspense, если надо.
+
+7.  Организация стилей. Добавляем темы.
+
+    1. Создаём папку styles. Внутри создаём папку variables и themes.
+    2. Создать стейт для переключения между темами и создать контекст (themeContext)
+    3. Сохранять тему в локалсторедж
+    4. Создать отдельный хук для переключения темы.
+
+
+
+8.  Classnames react library
+    
+    1. Создаём функцию classnames
+
+9. Внедряем архитиктуру Feature-sliced
+    
+    1. Добавляем абсолютные пути.
+    2. Переделываем всю архитектуру.
