@@ -11,11 +11,11 @@ const NavBar = ({ className = "" }: NavBarProps) => {
   return (
     <div className={classNames(classes.NavBar, {}, [className])}>
       <div className={classes.links}>
-        <AppLink theme="secondary" to={`/about-page`}>
+        <AppLink theme="secondary" to={`/about`}>
           About page
         </AppLink>
-        <AppLink to={`/main-page`}>Main page</AppLink>
-        <Outlet />
+        <AppLink to={`/`}>Main page</AppLink>
+      <Outlet />
       </div>
     </div>
   );
