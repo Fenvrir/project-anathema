@@ -1,13 +1,16 @@
-import { NavBar } from "@/widgets/NavBar";
 import * as classes from "./RootPage.module.scss";
 import { Outlet } from "react-router-dom";
-import { AppLink } from "@/shared";
+import { AppLink } from "@/shared/ui/AppLink";
+import { ThemeSwitcher } from "@/shared/ui/ThemeSwtitcher";
 
 function RootPage() {
   return (
     <div className={classes.RootContainer}>
       <div className={classes.sidebar}>
-        <h1>Sidebar</h1>
+        <div>
+          <h1>Sidebar</h1>
+          <ThemeSwitcher />
+        </div>
         <div>
           <form id="search-form" role="search">
             <input
@@ -27,7 +30,7 @@ function RootPage() {
         <nav>
           <ul>
             <li>
-              <AppLink to={`/about`} >About Page</AppLink>
+              <AppLink to={`/about`}>About Page</AppLink>
             </li>
             <li>
               <AppLink to={`/`}>Main Page</AppLink>

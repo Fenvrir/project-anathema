@@ -1,6 +1,6 @@
 import * as classes from "./NavBar.module.scss";
 import { classNames } from "@/shared/lib/className";
-import { AppLink } from "@/shared";
+import { AppLink } from "@/shared/ui/AppLink";
 import { Outlet } from "react-router-dom";
 
 interface NavBarProps {
