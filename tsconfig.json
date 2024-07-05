@@ -31,6 +31,7 @@
     // можно писать такой
     // import React from 'react';
     "allowSyntheticDefaultImports": true,
+    // "forceConsistentCasingInFileNames": false,
     "plugins": [
       {
         "name": "typescript-plugin-css-modules"
