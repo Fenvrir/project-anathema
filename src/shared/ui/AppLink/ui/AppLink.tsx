@@ -1,10 +1,10 @@
 import { Link, LinkProps } from "react-router-dom"
-import * as classes from "./AppLink.module.scss"
+import * as cls from "./AppLink.module.scss"
 import { FC } from "react"
 import { classNames } from "@/shared/lib/className"
 import { ValueOf } from "type-fest"
 
-const THEMES = {
+export const THEMES = {
 	PRIMARY: "primary",
 	SECONDARY: "secondary",
 } as const
@@ -28,9 +28,9 @@ export const AppLink: FC<AppLinkProps> = (props) => {
 	return (
 		<Link
 			to={to}
-			className={classNames(classes.AppLink, {}, [
+			className={classNames(cls.AppLink, {}, [
 				className,
-				classes[theme],
+				cls[theme],
 			])}
 			{...otherProps}
 		>

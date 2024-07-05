@@ -1,5 +1,5 @@
 import { classNames } from "@/shared/lib/className";
-import * as classes from "./Button.module.scss";
+import * as cls from "./Button.module.scss";
 import { ButtonHTMLAttributes, FC } from "react";
 import { ValueOf } from "type-fest";
 
@@ -12,14 +12,17 @@ type ThemeButtonType = ValueOf<typeof ThemeButton>;
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   theme?: ThemeButtonType;
+  padding?: number;
+  margin?: number;
 }
 
 const Button: FC<ButtonProps> = (props) => {
-  const { className, children, theme, ...otherProps } = props;
+  const { className, children, theme, padding, margin, ...otherProps } = props;
 
   return (
     <button
-      className={classNames(classes.Button, {}, [className, classes[theme]])}
+      style={{ padding, margin }}
+      className={classNames(cls.Button, {}, [className, cls[theme]])}
       {...otherProps}
     >
       {children}

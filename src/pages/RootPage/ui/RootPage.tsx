@@ -1,45 +1,15 @@
 import * as classes from "./RootPage.module.scss";
 import { Outlet } from "react-router-dom";
-import { AppLink } from "@/shared/ui/AppLink";
-import { ThemeSwitcher } from "@/shared/ui/ThemeSwtitcher";
+import { NavBar } from "@/widgets/Navbar";
+import { SideBar } from "@/widgets/Sidebar";
 
 function RootPage() {
   return (
     <div className={classes.RootContainer}>
-      <div className={classes.sidebar}>
-        <div>
-          <h1>Sidebar</h1>
-          <ThemeSwitcher />
-        </div>
-        <div>
-          <form id="search-form" role="search">
-            <input
-              id="q"
-              aria-label="Search contacts"
-              placeholder="Search"
-              type="search"
-              name="q"
-            />
-            <div className={classes.searchSpinner} aria-hidden hidden={true} />
-            <div className="sr-only" aria-live="polite"></div>
-          </form>
-          <form method="post">
-            <button type="submit">New</button>
-          </form>
-        </div>
-        <nav>
-          <ul>
-            <li>
-              <AppLink to={`/about`}>About Page</AppLink>
-            </li>
-            <li>
-              <AppLink to={`/`}>Main Page</AppLink>
-            </li>
-          </ul>
-        </nav>
-      </div>
+      <NavBar />
 
       <div className={classes.detail}>
+        <SideBar />
         <Outlet />
       </div>
     </div>
