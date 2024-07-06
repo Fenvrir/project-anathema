@@ -26,7 +26,7 @@ export const BuildWebpackConfig = (
       rules: buildLoaders(options),
     },
     resolve: buildResolvers(paths),
-    plugins: buildPlugins(paths),
+    plugins: buildPlugins(options),
     devServer: isDev ? buildDevServer(options) : undefined,
   };
 };
