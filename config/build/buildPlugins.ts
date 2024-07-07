@@ -26,6 +26,10 @@ export const buildPlugins = ({
 
   // Если сборка для девелопа, тогда у нас должна быть горячая замена кода.
   // Следовательно используем плагины для этого.
+  // 
+  // Вообще devserver выдает warning:
+  //! [webpack-dev-server] "hot: true" automatically applies HMR plugin, you don't have to add it manually to your webpack configuration.
+  // Так что возможно этот код и не нужен уже.
   if (isDev) {
     plugins.push(
       new webpack.HotModuleReplacementPlugin(),
