@@ -22,7 +22,7 @@ const Button: FC<ButtonProps> = props => {
 	return (
 		<button
 			style={{ padding, margin }}
-			className={classNames(cls.Button, {}, [className, cls[theme]])}
+			className={classNames(cls.button, {}, [className, cls[theme]])}
 			{...otherProps}
 		>
 			{children}

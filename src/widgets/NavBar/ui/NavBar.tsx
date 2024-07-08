@@ -12,7 +12,7 @@ const NavBar = ({ className = "" }: NavBarProps) => {
 	const { t } = useTranslation()
 
 	return (
-		<div className={classNames(classes.NavBar, {}, [className])}>
+		<div className={classNames(classes.navbar, {}, [className])}>
 			<div className={classes.links}>
 				<AppLink to={`/`}> {t("main_page")}</AppLink>
 				<AppLink to={`/about`}>{t("about_page")}</AppLink>
