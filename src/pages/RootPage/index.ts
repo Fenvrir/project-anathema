@@ -1,3 +1,3 @@
-import { RootPage } from "./ui/RootPage";
+import { RootPage } from "./ui/RootPage"
 
-export { RootPage };
+export { RootPage }

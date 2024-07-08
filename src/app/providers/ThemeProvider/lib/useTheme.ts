@@ -1,25 +1,25 @@
-import { useContext } from "react";
+import { useContext } from "react"
 import {
-  LOCAL_STORAGE_THEME_KEY,
-  Theme,
-  ThemeContext,
-  ThemesType,
-} from "./ThemeContext";
+	LOCAL_STORAGE_THEME_KEY,
+	Theme,
+	ThemeContext,
+	ThemesType,
+} from "./ThemeContext"
 
 interface UseThemeResalt {
-  theme: ThemesType;
-  toggleTheme: () => void;
+	theme: ThemesType
+	toggleTheme: () => void
 }
 
 export function useTheme(): UseThemeResalt {
-  const { theme, setTheme } = useContext(ThemeContext);
+	const { theme, setTheme } = useContext(ThemeContext)
 
-  const toggleTheme = () => {
-    const newTheme = theme === Theme.BASIC ? Theme.DARK : Theme.BASIC;
+	const toggleTheme = () => {
+		const newTheme = theme === Theme.BASIC ? Theme.DARK : Theme.BASIC
 
-    localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
-    setTheme(newTheme);
-  };
+		localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme)
+		setTheme(newTheme)
+	}
 
-  return { theme, toggleTheme };
+	return { theme, toggleTheme }
 }
