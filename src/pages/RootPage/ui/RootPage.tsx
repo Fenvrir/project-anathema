@@ -9,7 +9,6 @@ function RootPage() {
 		<div className={classes.rootContainer}>
 			<Suspense fallback='Loading'>
 				<NavBar />
-				<div>some text</div>
 				<div className={classes.detail}>
 					<SideBar />
 					<Outlet />

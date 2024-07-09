@@ -2,8 +2,10 @@ import globals from "globals"
 import pluginJs from "@eslint/js"
 import tseslint from "typescript-eslint"
 import pluginReactConfig from "eslint-plugin-react/configs/recommended.js"
+import { fixupConfigRules } from "@eslint/compat"
 import stylisticTs from "@stylistic/eslint-plugin-ts"
 import stylisticJsx from "@stylistic/eslint-plugin-jsx"
+import i18next from "eslint-plugin-i18next"
 
 export default [
 	{ files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"] },
@@ -11,21 +13,17 @@ export default [
 	{ languageOptions: { globals: globals.browser } },
 	pluginJs.configs.recommended,
 	...tseslint.configs.recommended,
-	pluginReactConfig,
+	...fixupConfigRules(pluginReactConfig),
 	{
-		plugins: [
-			{ "@stylistic/js": stylisticTs },
-			{ "@stylistic/jsx": stylisticJsx },
-		],
+		plugins: {
+			"@stylistic/ts": stylisticTs,
+			"@stylistic/jsx": stylisticJsx,
+			"i18next": i18next
+		},
 
 		rules: {
 			"react/react-in-jsx-scope": "off",
 			"react/jsx-uses-react": "off",
-
-			//@stylistic/js/indent
-			"@stylistic/js/indent": ["error", 2],
-			"@stylistic/semi": "error",
-			"@stylistic/jsx-indent": "error",
 		},
 	},
 ]
