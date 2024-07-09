@@ -6,6 +6,8 @@
 			{
 				"message": "Expected class selector to be kebab-case or lowerCamelCase"
 			}
-		]
+		],
+		"color-function-notation": null,
+		"alpha-value-notation": "percentage"
 	}
 }

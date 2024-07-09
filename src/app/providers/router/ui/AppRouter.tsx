@@ -1,12 +1,9 @@
-import {
-	createBrowserRouter,
-	createRoutesFromElements,
-	Route,
-} from "react-router-dom"
+import { createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom"
 import { routeConfig } from "../config/routeConfig"
 import { RootPage } from "@/pages/RootPage"
 import { ErrorPage } from "@/pages/ErrorPage"
 import { Suspense } from "react"
+import { PageLoader } from "@/shared/ui/PageLoader/PageLoader"
 
 // Используя оператор спред и Object.values мы получаем только значения объекта с роутами.
 export const AppRouter = createBrowserRouter(
@@ -16,9 +13,7 @@ export const AppRouter = createBrowserRouter(
 				<Route
 					key={path}
 					path={path}
-					element={
-						<Suspense fallback={<div>Loading...</div>}>{element}</Suspense>
-					}
+					element={<Suspense fallback={<PageLoader />}>{element}</Suspense>}
 				/>
 			))}
 		</Route>,
