@@ -1,0 +1,13 @@
+{
+	"extends": "stylelint-config-standard-scss",
+	"rules": {
+		"selector-class-pattern": [
+			"(^([_a-z][a-z0-9]*)(-[a-z0-9]+)*$|^[a-z][a-zA-Z0-9]+$)",
+			{
+				"message": "Expected class selector to be kebab-case or lowerCamelCase"
+			}
+		],
+		"color-function-notation": null,
+		"alpha-value-notation": "percentage"
+	}
+}

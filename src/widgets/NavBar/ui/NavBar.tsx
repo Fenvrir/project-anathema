@@ -1,24 +1,24 @@
-import * as classes from "./NavBar.module.scss";
-import { classNames } from "@/shared/lib/className";
-import { AppLink } from "@/shared";
-import { Outlet } from "react-router-dom";
+import { classNames } from "@/shared/lib/className"
+import { AppLink } from "@/shared/ui/AppLink"
+import { useTranslation } from "react-i18next"
+
+import * as classes from "./NavBar.module.scss"
 
 interface NavBarProps {
-  className?: string;
+	className?: string
 }
 
 const NavBar = ({ className = "" }: NavBarProps) => {
-  return (
-    <div className={classNames(classes.NavBar, {}, [className])}>
-      <div className={classes.links}>
-        <AppLink theme="secondary" to={`/about-page`}>
-          About page
-        </AppLink>
-        <AppLink to={`/main-page`}>Main page</AppLink>
-        <Outlet />
-      </div>
-    </div>
-  );
-};
+	const { t } = useTranslation()
 
-export default NavBar;
+	return (
+		<div className={classNames(classes.navbar, {}, [className])}>
+			<div className={classes.links}>
+				<AppLink to={`/`}> {t("main_page")}</AppLink>
+				<AppLink to={`/about`}>{t("about_page")}</AppLink>
+			</div>
+		</div>
+	)
+}
+
+export default NavBar

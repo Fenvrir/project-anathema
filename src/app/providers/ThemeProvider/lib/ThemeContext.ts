@@ -1,18 +1,20 @@
-import { createContext } from "react";
-import { ValueOf } from "type-fest";
+import { createContext } from "react"
+import { ValueOf } from "type-fest"
 
-export const Theme = {
-  BASIC: "basic",
-  DARK: "dark",
-} as const;
+const Theme = {
+	BASIC: "basic",
+	DARK: "dark",
+} as const
 
-export type ThemesType = ValueOf<typeof Theme>;
+export type ThemesType = ValueOf<typeof Theme>
 
 export interface ThemeContextProps {
-  theme?: ThemesType;
-  setTheme?: (theme: ThemesType) => void;
+	theme?: ThemesType
+	setTheme?: (theme: ThemesType) => void
 }
 
-export const ThemeContext = createContext<ThemeContextProps>({});
+const ThemeContext = createContext<ThemeContextProps>({})
 
-export const LOCAL_STORAGE_THEME_KEY = "theme";
+const LOCAL_STORAGE_THEME_KEY = "theme"
+
+export { ThemeContext, LOCAL_STORAGE_THEME_KEY, Theme }
