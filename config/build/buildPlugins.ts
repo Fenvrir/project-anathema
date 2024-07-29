@@ -4,11 +4,9 @@ import type { WebpackPluginInstance } from "webpack"
 import HtmlWebpackPlugin from "html-webpack-plugin"
 import { BuildOptions } from "./types/config"
 import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin"
+import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer"
 
-export const buildPlugins = ({
-	paths,
-	isDev,
-}: BuildOptions): WebpackPluginInstance[] => {
+export const buildPlugins = ({ paths, isDev }: BuildOptions): WebpackPluginInstance[] => {
 	const plugins = [
 		new HtmlWebpackPlugin({
 			template: paths.html,
@@ -22,6 +20,9 @@ export const buildPlugins = ({
 			filename: "css/[name].[contenthash:8].css",
 			chunkFilename: "css/[name].[contenthash:8].css",
 		}),
+		new BundleAnalyzerPlugin({
+			openAnalyzer: false,
+		}),
 	]
 
 	// Если сборка для девелопа, тогда у нас должна быть горячая замена кода.
@@ -31,10 +32,7 @@ export const buildPlugins = ({
 	//! [webpack-dev-server] "hot: true" automatically applies HMR plugin, you don't have to add it manually to your webpack configuration.
 	// Так что возможно этот код и не нужен уже.
 	if (isDev) {
-		plugins.push(
-			new webpack.HotModuleReplacementPlugin(),
-			new ReactRefreshWebpackPlugin(),
-		)
+		plugins.push(new webpack.HotModuleReplacementPlugin(), new ReactRefreshWebpackPlugin())
 	}
 
 	return plugins

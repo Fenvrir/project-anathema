@@ -1,8 +1,8 @@
-import { classNames } from "@/shared/lib/className"
+import { classNames } from "@/shared/lib/classNames/className"
 import { AppLink } from "@/shared/ui/AppLink"
 import { useTranslation } from "react-i18next"
 
-import * as classes from "./NavBar.module.scss"
+import classes from "./NavBar.module.scss"
 
 interface NavBarProps {
 	className?: string

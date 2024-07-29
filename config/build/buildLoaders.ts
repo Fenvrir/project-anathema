@@ -13,7 +13,6 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
 
 	const svgLoader = {
 		test: /\.svg$/i,
-		issuer: /\.[jt]sx?$/,
 		use: ["@svgr/webpack"],
 	}
 
@@ -38,16 +37,12 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
 			{
 				loader: "css-loader",
 				options: {
-					esModule: true,
 					modules: {
 						// Эта проверка даёт возможность использовать модульный подход в файлах,
 						// которые включает в своё название ".module."
 						// Для всех остальных файлов будет использоваться обычный подход.
 						auto: (resPath: string) => Boolean(resPath.includes(".module.")),
-						localIdentName: isDev
-							? "[path][name]__[local]--[hash:base64:5]"
-							: "[hash:base64:5]",
-						namedExport: true,
+						localIdentName: isDev ? "[path][name]__[local]--[hash:base64:5]" : "[hash:base64:5]",
 					},
 				},
 			},

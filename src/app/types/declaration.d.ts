@@ -1,10 +1,11 @@
 // Объявляем тип для [name].module.scss файлов.
-declare module "*.scss" {
+declare module "*.module.scss" {
 	interface IClassNames {
 		[className: string]: string
 	}
-	const classnames: IClassNames
-	export = classnames
+
+	const cls: IClassNames
+	export = cls
 }
 
 declare module "*.png"

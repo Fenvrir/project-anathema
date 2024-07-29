@@ -1,7 +1,7 @@
 import { Link, LinkProps } from "react-router-dom"
-import * as cls from "./AppLink.module.scss"
+import cls from "./AppLink.module.scss"
 import { FC } from "react"
-import { classNames } from "@/shared/lib/className"
+import { classNames } from "@/shared/lib/classNames/className"
 import { ValueOf } from "type-fest"
 
 export const THEMES = {

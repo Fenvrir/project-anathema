@@ -1,5 +1,5 @@
-import { classNames } from "@/shared/lib/className"
-import * as cls from "./Button.module.scss"
+import { classNames } from "@/shared/lib/classNames/className"
+import cls from "./Button.module.scss"
 import { ButtonHTMLAttributes, FC } from "react"
 import { ValueOf } from "type-fest"
 

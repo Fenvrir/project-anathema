@@ -2,7 +2,7 @@ import React from "react"
 import { RouterProvider } from "react-router-dom"
 
 import { useTheme } from "@/app/providers/ThemeProvider"
-import { classNames } from "@/shared/lib/className"
+import { classNames } from "@/shared/lib/classNames/className"
 import { AppRouter } from "./providers/router"
 
 const App = () => {

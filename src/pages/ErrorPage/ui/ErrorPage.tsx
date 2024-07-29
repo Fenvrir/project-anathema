@@ -1,4 +1,4 @@
-import * as cls from "./ErrorPage.module.scss"
+import cls from "./ErrorPage.module.scss"
 // import { useRouteError } from "react-router-dom"
 
 export function ErrorPage() {

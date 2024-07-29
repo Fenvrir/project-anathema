@@ -1,17 +1,17 @@
-import * as classes from "./RootPage.module.scss"
+import classes from "./RootPage.module.scss"
 import { Outlet } from "react-router-dom"
 import { NavBar } from "@/widgets/Navbar"
-import { SideBar } from "@/widgets/Sidebar"
+import { Sidebar } from "@/widgets/Sidebar"
 import { Suspense } from "react"
 import { PageLoader } from "@/shared/ui/PageLoader/PageLoader"
 
 function RootPage() {
 	return (
-		<div className={classes.rootContainer}>
+		<div className={classes["root-container"]}>
 			<Suspense fallback={<PageLoader />}>
 				<NavBar />
 				<div className={classes.detail}>
-					<SideBar />
+					<Sidebar />
 					<Outlet />
 				</div>
 			</Suspense>
