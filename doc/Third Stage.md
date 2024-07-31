@@ -2,4 +2,6 @@
 
 2. Добавляем react-testing-library
 
-3. 
+3. Добавляем StoryBook
+
+4. 
